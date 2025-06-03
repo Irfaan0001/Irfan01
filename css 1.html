@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clean Layout</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f5f5f5;
+    }
+
+    .header {
+      background-color: #128fb1;
+      color: white;
+      padding: 20px;
+      text-align: right;
+    }
+
+    .navbar {
+      display: flex;
+      background-color: #006d77;
+      color: white;
+      justify-content: space-around;
+      padding: 15px 0;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      display: flex;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .sidebar {
+      width: 20%;
+      background-color: #ffa500;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .main {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .section {
+      background-color: #e0e0e0;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .lower-sections {
+      display: flex;
+      gap: 20px;
+    }
+
+    .block, .subscription, .otherservice {
+      flex: 1;
+      padding: 20px;
+      border-radius: 8px;
+      color: white;
+    }
+
+    .block {
+      background-color: #4caf50;
+    }
+
+    .subscription {
+      background-color: #388e3c;
+    }
+
+    .otherservice {
+      background-color: #1976d2;
+    }
+
+    .footer {
+      background-color: #ffeb3b;
+      color: black;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    fieldset {
+      border: none;
+      margin-bottom: 10px;
+    }
+
+    fieldset p {
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    .sidebar p, .block p, .subscription p, .otherservice p {
+      margin: 8px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Enter Site Title</h1>
+  </div>
+
+  <div class="navbar">
+    <a href="#">Home</a>
+    <a href="#">New Page 2</a>
+    <a href="#">New Page 3</a>
+    <a href="#">New Page 4</a>
+  </div>
+
+  <div class="content">
+    <div class="sidebar">
+      <fieldset>
+        <p>Main Menu</p>
+      </fieldset>
+      <p>* Menu Item 1</p>
+      <p>* Menu Item 2</p>
+      <p>* Menu Item 3</p>
+      <p>* Menu Item 4</p>
+      <p>* Menu Item 5</p>
+    </div>
+
+    <div class="main">
+      <div class="section">
+        <fieldset>
+          <p>Gallery</p>
+        </fieldset>
+        <p>A gallery is a space used to exhibit works of art, often with details about the artist and theme. It may also refer to raised areas or narrow passages in architecture.</p>
+      </div>
+
+      <div class="lower-sections">
+        <div class="block">
+          <fieldset>
+            <p>Block</p>
+          </fieldset>
+          <p>* Enter block content here..</p>
+          <p>* Enter block content1..</p>
+          <p>* Enter block content2..</p>
+        </div>
+
+        <div class="subscription">
+          <fieldset>
+            <p>Subscription</p>
+          </fieldset>
+          <p>A subscription is a payment you make regularly (e.g. yearly) to receive content or access services.</p>
+        </div>
+
+        <div class="otherservice">
+          <fieldset>
+            <p>Other Services</p>
+          </fieldset>
+          <p>These include additional offerings like support, maintenance, or consulting that improve customer experience and product value.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    Footer Box
+  </div>
+
+</body>
+</html>
