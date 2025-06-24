@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amazon Layout Replica</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+    }
+
+    .navbar {
+      background-color: #131921;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar input {
+      padding: 8px;
+      width: 40%;
+    }
+
+    .main {
+      background: linear-gradient(to right, #e6e6fa, #dcd0ff);
+      padding: 20px;
+    }
+
+    .banner {
+      background-image: url('https://via.placeholder.com/900x300'); /* Placeholder */
+      background-size: cover;
+      height: 300px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+
+    .section-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .section {
+      background-color: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      width: 23%;
+    }
+
+    .section h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .section img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+      border-radius: 4px;
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        width: 48%;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .section {
+        width: 100%;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navbar input {
+        width: 100%;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div><strong>amazon.in</strong> | Delivering to Ahmedabad</div>
+    <input type="text" placeholder="Search Amazon.in" />
+    <div>Account & Lists | Orders | Cart</div>
+  </div>
+
+  <div class="main">
+    <div class="banner"></div>
+
+    <div class="section-container">
+      <div class="section">
+        <h3>Appliances for your home | Up to 55% off</h3>
+        <img src="https://via.placeholder.com/150" alt="Air conditioners" />
+        <img src="https://via.placeholder.com/150" alt="Refrigerators" />
+      </div>
+
+      <div class="section">
+        <h3>Revamp your home in style</h3>
+        <img src="https://via.placeholder.com/150" alt="Cushion covers" />
+        <img src="https://via.placeholder.com/150" alt="Figurines" />
+      </div>
+
+      <div class="section">
+        <h3>PlayStation 5 Slim & Accessories</h3>
+        <img src="https://via.placeholder.com/150" alt="PS5" />
+        <img src="https://via.placeholder.com/150" alt="Controller" />
+      </div>
+
+      <div class="section">
+        <h3>Starting ₹149 | Headphones</h3>
+        <img src="https://via.placeholder.com/150" alt="boAt" />
+        <img src="https://via.placeholder.com/150" alt="Zebronics" />
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!--
+	
+	100%  = 12 column   
+
+	100%/12 = 8.33%  - 1 block 
+	
+	
+	-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .row1 {
+            display: flex;
+            padding: auto;
+        }
+
+        .col-1{ width:8.33% }
+		.col-2{ width:16.66% }
+		.col-3{ width:25% }
+		.col-4{ width:33.33% }
+		.col-5{ width:41.66% }
+		.col-6{ width:50% }
+		.col-7{ width:58.33% }
+		.col-8{ width:66.66% }
+		.col-9{ width:75% }
+		.col-10{ width:83.33% }
+		.col-11{ width:91.66% }
+		.col-12{ width:100% }
+
+        .header {
+            background-color: brown;
+            color: beige;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            padding-left: 25px;
+            display: flex;
+        }
+
+        .search{
+            height: 40px;
+            width: 500px;
+            margin-left: 50px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        .navbar {
+            background-color: beige;
+            color: brown;
+            text-align: center;
+            margin-bottom: 10px;
+
+        }
+
+        .product {
+            border: solid 2px brown;
+            border-radius: 15px;
+            padding: 10px;
+            color: brown;
+            margin-right: 5px;
+
+        }
+
+        .product button {
+            text-align: center;
+            background-color: brown;
+            color: beige;
+            width: 310px;
+            margin-left: 20px;
+            margin-right: 20px;
+            padding: 7px;
+        }
+
+        .banner {
+            background-color: white;
+            padding: auto;
+        }
+
+        .details {
+            color: brown;
+            font-style: italic;
+        }
+
+        .footer {
+            background-color: beige;
+            text-align: center;
+            padding: 10px;
+            color: brown;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="row">
+
+        <div class="col-12 header"> <!-- Header -->     <!-- Header -->     <!-- Header -->
+            <h1>ZANY PERFUME</h1>
+            <input type="text" class="search" placeholder="Search Your Favrioute Attar"> <!-- Search Bar -->
+        </div>
+
+        <div class="col-2 details">
+            <a href="file:///C:/Users/Asus/Desktop/Irfan01/extra_practice/grid.html"><img src="adil.png"
+                    width="100%"></a>
+        </div>
+
+        <div class="col-2 details">
+            <p>Buy 3 attar at 599/-</p>
+            <p>Buy 7 attar at 999/-</p>
+            <p>Buy 12 attar at 1499/-</p>
+        </div>
+
+        <div class="col-2 details">
+            <p>Royal Attar </p>
+            <p>Royal Perfume</p>
+            <p>Royal Incense sticks</p>
+        </div>
+
+        <div class="col-2 details">
+            <p>Attars</p>
+            <p>Body Sprays</p>
+            <p>New Arraival</p>
+        </div>
+
+        <div class="col-2 details">
+            <p>Order Now</p>
+            <p>Near By Store</p>
+        </div>
+
+        <div class="col-2 details">
+            <p>Store Locator</p>
+            <p>Return Order</p>
+        </div>
+
+
+
+        <div class="col-12 banner"> <!-- Banner --> <!-- Banner --> <!-- Banner -->
+            <a href="https://www.adilqadri.com/collections/get-3-attars-at-price-of-2-attars"><img src="attar.jpg"
+                    width="100%"></a>
+        </div>
+
+        <div class="col-3 navbar">
+            <h2>Free Shiping</h2>
+        </div>
+
+        <div class="col-3 navbar">
+            <h2>Easy Return</h2>
+        </div>
+
+        <div class="col-3 navbar">
+            <h2>Cod Available</h2>
+        </div>
+
+        <div class="col-3 navbar">
+            <h2>Secure Payments</h2>
+        </div>
+
+    </div>
+
+
+    <div class="row1"> <!-- Product --> <!-- Product --> <!-- Product -->
+
+        <div class="col-3 product">
+            <img src="shanaya.jpg" width="100%">
+            <p>Shanaya Luxury Attar Perfume</p>
+            <p>399/-</p>
+            <button type="button">Add To Cart</button>
+        </div>
+
+        <div class="col-3 product">
+            <img src="whiteoudh.jpg" width="100%">
+            <p>White Oudh Attar Perfume</p>
+            <p>399/-</p>
+            <button type="button">Add To Cart</button>
+        </div>
+
+        <div class="col-3 product">
+            <img src="story.jpg" width="100%">
+            <p>The Story Attar Perfume</p>
+            <p>399/-</p>
+            <button type="button">Add To Cart</button>
+        </div>
+
+        <div class="col-3 product">
+            <img src="shanayagold.jpg" width="100%">
+            <p>Shanaya Gold Attar Perfume</p>
+            <p>399/-</p>
+            <button type="button">Add To Cart</button>
+        </div>
+
+    </div> <!-- Product Images End Here --> <!-- Product Images End Here --> <!-- Product Images End Here -->
+
+    <br>
+    <br>
+
+    <div class="row1"> <!-- Banner --> <!-- Banner --> <!-- Banner -->
+
+        <div class="col-6 banner">
+            <a href="https://www.adilqadri.com/products/lazina-perfume-spray-100ml" target="_blank"><img
+                    src="Lazinabanner.jpg" width="100%"></a>
+        </div> <!-- target="_blank" is used to open tab in new tab -->
+
+        <div class="col-6 banner">
+            <a href="https://www.adilqadri.com/products/sulook-royal-attar-perfume-10-ml"><img src="sulookbanner.jpg"
+                    width="100%"></a>
+        </div>
+
+    </div> <!-- Banner Ends Here--> <!-- Banner Ends Here-->
+
+    <br>
+    <div class="col-12 header">
+        <h1>Our Best Selling Combo</h1>
+    </div>
+    <br>
+
+    <div class="row1"> <!-- Product --> <!-- Product --> <!-- Product -->
+
+        <div class="col-3 product">
+            <img src="combo1.jpg" width="100%">
+            <p>Shanaya Luxury Attar Perfume</p>
+            <p>399/-</p>
+            <button type="button">Add To Cart</button>
+        </div>
+
+        <div class="col-3 product">
+            <img src="combo2.jpg" width="100%">
+            <p>White Oudh Attar Perfume</p>
+            <p>399/-</p>
+            <button type="button">Add To Cart</button>
+        </div>
+
+        <div class="col-3 product">
+            <img src="combo3.jpg" width="100%">
+            <p>The Story Attar Perfume</p>
+            <p>399/-</p>
+            <button type="button">Add To Cart</button>
+        </div>
+
+        <div class="col-3 product">
+            <img src="combo4.jpg" width="100%">
+            <p>Shanaya Gold Attar Perfume</p>
+            <p>399/-</p>
+            <button type="button">Add To Cart</button>
+        </div>
+
+    </div> <!-- Product Images End Here --> <!-- Product Images End Here --> <!-- Product Images End Here -->
+
+    <br>
+
+    <div class="row">
+
+        <div class="col-12 banner"> <!-- Banner --> <!-- Banner --> <!-- Banner -->
+            <img src="hasmi.jpg" width="100%">
+        </div>
+
+        <div class="col-3 footer"> 
+            <h4>+91 9428208666</h4>
+            <h4>irfanansari0001</h4>
+            <h4>info@adilqadri.com</h4>
+        </div>
+
+        <div class="col-3 footer">
+            <h4>Buy 3 Attars at ₹799</h4>
+            <h4>Perfume SprayNew Launch</h4>
+            <h4>Royal Attar PerfumeTrending</h4>
+            <h4></h4>
+        </div>
+
+        <div class="col-3 footer">
+            <h4>Account</h4>
+            <h4>About Us</h4>
+            <h4>Contact Us</h4>
+            <h4>Track Order</h4>
+        </div>
+
+        <div class="col-3 footer">
+            <h4>Privacy Policy</h4>
+            <h4>Terms of Service</h4>
+            <h4>Return Your Order</h4>
+            <h4>Refunds & Cancellations Policy</h4>
+        </div>
+
+        <div class="col-12 footer">
+            <h5>@2025 IrfanAnsari | All Right Reserved | Develop By Irfan Ansari 0001</h5>
+        </div>
+
+    </div>
+
+</body>
+</html>

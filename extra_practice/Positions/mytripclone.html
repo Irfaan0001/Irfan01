@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make My Trip</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .row1 {
+            display: flex;
+            padding: auto;
+        }
+
+        .col-1{ width:8.33% }
+		.col-2{ width:16.66% }
+		.col-3{ width:25% }
+		.col-4{ width:33.33% }
+		.col-5{ width:41.66% }
+		.col-6{ width:50% }
+		.col-7{ width:58.33% }
+		.col-8{ width:66.66% }
+		.col-9{ width:75% }
+		.col-10{ width:83.33% }
+		.col-11{ width:91.66% }
+		.col-12{ width:100% }
+
+        .header{            /*      <!-- Logo -->   Make My Trip   <!-- Logo -->       */
+            height: 70px;
+            display: flex;
+            color: grey;
+            top: 20px;
+            position: absolute;
+            z-index: 20;     /*      <!-- Logo -->   Make My Trip   <!-- Logo -->       */
+        }
+
+        .navbar{                         /* <!-- Flight     House     Hotel     Holiday     Train      Buses     Cabs     visa      Forex.....  --> */  
+            border: solid 2px black;
+            border-radius: 10px;
+            position: absolute;
+            display: flex;
+            top: 0px;
+            margin-top: 80px;
+            margin-left: 320px;
+            padding: 5px;
+            background-color: rgb(255, 255, 255);
+            z-index: 21;                  /* <!-- Flight     House     Hotel     Holiday     Train      Buses     Cabs     visa      Forex.....  --> */  
+        }
+
+        .navbar a{                        /* <!-- Flight     House     Hotel     Holiday     Train      Buses     Cabs     visa      Forex.....  --> */ 
+            padding: 20px;
+            text-decoration: none;
+            text-align: center; 
+        }                                 /*      For Text Decoration        */
+
+
+        .footer2{                                      /*  Where2Go      How2Go      Credit Card     MICE        Gift Cards  */
+            border: solid rgb(0, 0, 0,0.2) 2px;
+            border-radius: 70px;
+            position: absolute;
+            display: flex;
+            margin-left: 400px;
+            background-color: white;
+            margin-top: -75px;
+           
+            background-color: azure;
+            
+
+        }
+
+        .footer2 a{
+            text-align: center;
+            padding: 20px;
+            text-decoration: none;
+            color: rgb(0, 0, 0,0.8);
+        }
+
+
+        .mainbar{
+            border: solid rgb(242, 235, 235);
+            border-radius: 10px;
+            position: absolute;
+            top: 150px;
+            background-color: white;
+            margin-left: 180px;
+            width: 75%;
+            z-index: 5;
+            height: 400px;
+            padding: 30px;
+        }
+
+        button{
+            background-color: blue;
+            border-radius: 70px;
+            position: absolute;
+            border: none;
+            color: white;
+            padding: 10px 52px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 25px;
+            margin: 4px 2px;
+            cursor: pointer;
+            margin-left: 670px;
+            margin-top: -117px;
+            font-family: Georgia, serif;
+            z-index: 7;
+        }
+
+        .card{
+            padding: 10px;
+            border: solid rgb(0, 0, 0,0.1) 2px;
+            border-radius: 5px; 
+        }
+
+        .footer{
+            border:solid rgb(0, 0, 0,0.1) 2px;
+            border-radius: 5px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            
+        }
+
+        .navbar2{
+            display: flex;
+            margin-left: 175px;
+            background-color: white;
+            border: solid rgba(118, 107, 107, 0.5) 2px;
+            border-radius: 10px;
+            padding: 10px;
+            
+        }
+
+        .navbar2 p{
+            margin-left: 50px;
+        }
+
+        
+        
+        
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div>       <!-- Banner -->   <!-- Banner -->     <!-- Banner -->
+       
+        <div style="position:relative">
+            <img src="mountain.jpg.jpg" width="100%" height="630px" />
+        </div>  <!-- Banner -->   <!-- Banner -->     <!-- Banner -->
+    
+    </div>
+
+    <div class="header"> <!-- Logo -->      <!-- Logo -->
+        <img src="logo.jpg" alt="">
+    </div>               <!-- Logo -->      <!-- Logo -->
+
+    <div class="navbar">     <!-- Flight     House     Hotel     Holiday     Train      Buses     Cabs     visa      Forex.....  -->
+        <a href="#"><i class="fa-solid fa-plane-departure"></i><br>Flight</a>
+        <a href="#"><i class="fa-solid fa-hotel"></i><br>Hotel</a>
+        <a href="#"><i class="fa-solid fa-house"></i><br>House</a>
+        <a href="#"><i class="fa-solid fa-gift"></i><br>Holiday<br>Package</a>
+        <a href="#"><i class="fa-solid fa-train"></i><br>Train</a>
+        <a href="#"><i class="fa-solid fa-van-shuttle"></i><br>Buses</a>
+        <a href="#"><i class="fa-solid fa-car"></i><br>Cabs</a>
+        <a href="#"><i class="fa-solid fa-book"></i><br>Visa</a>
+        <a href="#"><i class="fa-solid fa-file-invoice-dollar"></i><br>Forex Card<br>& Currency</a>
+        <a href="#"><i class="fa-solid fa-globe"></i><br>Travel <br>Insurance</a>
+    </div>                   <!-- Flight     House     Hotel     Holiday     Train      Buses     Cabs     visa      Forex.....  -->
+    
+    <div class="mainbar">
+        <br>
+        <input type="radio" name="sample">One Way
+        <input type="radio" name="sample">Round Trip
+        <input type="radio" name="sample">Multi City
+        <span style="margin-left: 520px;">Book International and Domestic Flights</span>
+
+        <br><br>
+
+        <div class="row">
+
+
+            <div class="col-3 card">                <!--  Card     Delhi To Bengalore      Departure       Return      Traveller & Class   -->
+                <p>From</p>
+                <h1>Delhi</h1>
+                <p>DEL, Delhi Airport India</p>
+            </div>
+
+            <div class="col-3 card">
+                <p>To</p>
+                <h1>Banglore</h1>
+                <p>BLR, Bengaluru International Airport</p>
+            </div>
+
+            <div class="col-2 card">
+                <p>Departure</p>
+                <h1>12 June</h1>
+                <p>Thursday</p>
+            </div>
+
+            <div class="col-2 card">
+                <p>Return</p>
+                <h1>13 June</h1>
+                <p>Friday</p>
+            </div>
+
+            <div class="col-2 card">
+                <p>Traveller & Class</p>
+                <h1>1Traveller</h1>
+                <p>Economy/Premium </p>
+            </div>                                    <!--  Card    Delhi To Bengalore      Departure       Return      Traveller & Class   -->
+                                                
+
+            <div class="col-2">                        <!-- footer Regular  Student Senior  Citizenship    Armed Forces    Doctor & Nurses -->
+                <p>Select a special fair</p>
+                <h3>Extra Savings</h3>
+            </div>
+
+            <div class="col-2 footer">
+            <input type="radio" id="regular" name="gender" value="regular">
+            <label for="regular">Regular</label>
+            <p>  Regular fares</p>
+            </div>
+
+            <div class="col-2 footer">
+            <input type="radio" id="regular" name="gender" value="regular">
+            <label for="regular">Student</label>
+            <p>  Extra discounts/baggage</p>
+            </div>
+
+            <div class="col-2 footer">
+            <input type="radio" id="regular" name="gender" value="regular">
+            <label for="regular">Senior Citizenship</label>
+            <p>  Up to ₹ 600 off</p>
+            </div>
+
+            <div class="col-2 footer">
+            <input type="radio" id="regular" name="gender" value="regular">
+            <label for="regular">Armed Forces</label>
+            <p>  Up to ₹ 600 off</p>
+            </div>
+
+            <div class="col-2 footer">
+            <input type="radio" id="regular" name="gender" value="regular">
+            <label for="regular">Doctor & Nurses</label>
+            <p>  Up to ₹ 600 off</p>
+            </div>                                     <!-- footer Regular  Student Senior  Citizenship    Armed Forces    Doctor & Nurses -->
+
+        </div>
+
+    </div>
+
+    <div>
+        <button>Search</button>
+    </div>
+
+    <br><br>
+
+    <div class="col-12">
+
+        <div class="footer2">                                           <!--   Where2Go      How2Go      Credit Card     MICE        Gift Cards  -->
+        <a href="#"><i class="fa-solid fa-location-dot"></i>Where2Go</a>
+        <a href="#"><i class="fa-solid fa-map-location-dot"></i>How2Go</a>
+        <a href="#"><i class="fa-solid fa-credit-card"></i>MakeMyTrip ICICI Credit Card</a>
+        <a href="#"><i class="fa-solid fa-users-line"></i>MICE</a>
+        <a href="#"><i class="fa-solid fa-gift"></i>Gift Cards</a>      <!--   Where2Go      How2Go      Credit Card     MICE        Gift Cards  -->
+        
+    </div>
+
+    <div class="row">
+
+        <div class="navbar2">
+            <h2 style="margin-left: 20px; margin-top: 10px;">Offers</h2>
+            <p>All Offers</p>
+            <p>Bank Offers</p>
+            <p>Flights</p>
+            <p>Hotels</p>
+            <p>Holidays</p>
+            <p>Trains</p>
+            <p>Buses</p>
+            <p>Forex</p>
+            <p>View All -></p>
+            
+            <div></div>
+            
+
+
+        </div>
+
+        
+
+            
+        
+
+    </div>
+
+
+              
+
+</body>
+</html>
