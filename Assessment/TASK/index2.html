@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zay eCommerce - Responsive Template</title>
+    <link rel="icon" href="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .col-1 { width: 8.33% }
+        .col-2 { width: 16.66% }
+        .col-3 { width: 25% }
+        .col-4 { width: 33.33% }
+        .col-5 { width: 41.66% }
+        .col-6 { width: 50% }
+        .col-7 { width: 58.33% }
+        .col-8 { width: 66.66% }
+        .col-9 { width: 75% }
+        .col-10 { width: 83.33% }
+        .col-11 { width: 91.66% }
+        .col-12 { width: 100% }
+
+        /* Top Navigation */
+        .upnav {
+            background-color: #000;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .upnav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .upnav-left {
+            display: flex;
+            gap: 30px;
+        }
+
+        .upnav p {
+            color: white;
+            margin: 0;
+        }
+
+        .upnav .icon {
+            display: flex;
+            gap: 15px;
+        }
+
+        .upnav .icon i {
+            color: white;
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .upnav .icon i:hover {
+            transform: scale(1.2);
+        }
+
+        /* Main Header */
+        .main {
+            background: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .written h1 {
+            color: #000;
+            font-size: 28px;
+            margin: 0;
+        }
+
+        .nav {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            font-size: 16px;
+            color: #000;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: #28a745;
+        }
+
+        .icon2 {
+            display: flex;
+            gap: 20px;
+        }
+
+        .icon2 i {
+            font-size: 20px;
+            color: #000;
+            transition: transform 0.3s ease;
+        }
+
+        .icon2 i:hover {
+            transform: scale(1.2);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Banner Section */
+        .banner {
+            display: flex;
+            align-items: center;
+            min-height: 500px;
+        }
+
+        .ban1 {
+            background-color: #f8f9fa;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .ban1 h1 {
+            color: #28a745;
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .ban1 h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .ban1 p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .ban2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ban2 img {
+            width: 100%;
+            height: auto;
+            max-width: 500px;
+        }
+
+        /* Categories Section */
+        .sp2 {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .write {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .write h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .write p {
+            font-size: 18px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .product {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .product p {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .product button {
+            padding: 12px 24px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .product button:hover {
+            background-color: #218838;
+        }
+
+        /* Featured Products Section */
+        .s3 {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+        }
+
+        .write2 {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .write2 h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .write2 p {
+            font-size: 18px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .review {
+            margin: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .review:hover {
+            transform: translateY(-5px);
+        }
+
+        .review img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .review-content {
+            padding: 20px;
+        }
+
+        .review h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .review p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .star {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+
+        .star i {
+            font-size: 16px;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #28a745;
+            margin-left: auto;
+        }
+
+        /* Footer */
+        .footer {
+            background: #000;
+            color: white;
+            padding: 60px 0 40px;
+        }
+
+        .footer1 {
+            padding: 20px;
+        }
+
+        .footer1 h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .footer1 p {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+
+        .footer1 h1:first-child {
+            color: #dc3545;
+        }
+
+        .footer2 {
+            background: #000;
+            padding: 20px 0;
+            border-top: 2px solid #dc3545;
+        }
+
+        .footer2-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .icon3 {
+            display: flex;
+            gap: 30px;
+        }
+
+        .icon3 i {
+            font-size: 30px;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .icon3 i:hover {
+            transform: scale(1.2);
+        }
+
+        .email-container {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #666;
+            max-width: 400px;
+            padding: 5px 0;
+        }
+
+        .email-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: white;
+            font-size: 16px;
+            padding: 8px 0;
+        }
+
+        .email-input::placeholder {
+            color: #ccc;
+        }
+
+        .send-btn {
+            background: none;
+            border: none;
+            color: #00ccff;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .send-btn:hover {
+            color: #ff4d4d;
+        }
+
+        .footer3 {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .footer3 p {
+            font-size: 16px;
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            /* Mobile Navigation */
+            .upnav-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .upnav-left {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .main {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            /* Banner responsive */
+            .banner {
+                flex-direction: column;
+                min-height: auto;
+            }
+
+            .col-6 {
+                width: 100%;
+            }
+
+            .ban1 {
+                padding: 40px 20px;
+                text-align: center;
+            }
+
+            .ban1 h1 {
+                font-size: 36px;
+            }
+
+            .ban1 h2 {
+                font-size: 20px;
+            }
+
+            /* Categories responsive */
+            .col-4 {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .write h1, .write2 h1 {
+                font-size: 32px;
+            }
+
+            .write p, .write2 p {
+                font-size: 16px;
+            }
+
+            .product img {
+                height: 250px;
+            }
+
+            /* Reviews responsive */
+            .review {
+                margin: 10px 0;
+            }
+
+            /* Footer responsive */
+            .footer .col-4 {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .footer2-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .icon3 {
+                justify-content: center;
+            }
+
+            .email-container {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .ban1 h1 {
+                font-size: 28px;
+            }
+
+            .ban1 h2 {
+                font-size: 18px;
+            }
+
+            .write h1, .write2 h1 {
+                font-size: 24px;
+            }
+
+            .product img {
+                height: 200px;
+            }
+
+            .review img {
+                height: 200px;
+            }
+
+            .icon3 i {
+                font-size: 24px;
+            }
+
+            .footer1 h1 {
+                font-size: 24px;
+            }
+
+            .footer1 p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Navigation -->
+    <div class="upnav">
+        <div class="container">
+            <div class="upnav-content">
+                <div class="upnav-left">
+                    <p>📧 info@company.com</p>
+                    <p>📞 010-020-0340</p>
+                </div>
+                <div class="icon">
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <i class="fa-brands fa-square-x-twitter"></i>
+                    <i class="fa-brands fa-square-instagram"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <div class="container">
+        <div class="main">
+            <div class="written">
+                <h1>SQUARE X</h1>
+            </div>
+            <nav class="nav">
+                <a href="#home">HOME</a>
+                <a href="#about">ABOUT</a>
+                <a href="#shop">SHOP</a>
+                <a href="#contact">CONTACT</a>
+            </nav>
+            <div class="icon2">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-regular fa-user"></i>
+                <i class="fa-solid fa-bag-shopping"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Banner Section -->
+    <div class="container">
+        <div class="row banner">
+            <div class="col-6 ban2">
+                <img src="banner01bg.jpg" alt="Banner Image">
+            </div>
+            <div class="col-6 ban1">
+                <h1>Zay eCommerce</h1>
+                <h2>Tiny and Perfect eCommerce Template</h2>
+                <p>Zay Shop is an eCommerce HTML5 CSS template with latest version of Bootstrap 5.</p>
+                <p>This template is 100% free provided by TemplateMo website.</p>
+                <p>Image credits go to Freepik Stories, Unsplash and Icons 8.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Categories Section -->
+    <div class="sp2">
+        <div class="container">
+            <div class="write">
+                <h1>Categories of The Month</h1>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div class="row">
+                <div class="col-4 product">
+                    <img src="pi1.jpg" alt="Watches">
+                    <p>Watches</p>
+                    <button>Shop Now</button>
+                </div>
+                <div class="col-4 product">
+                    <img src="pi2.jpg" alt="Shoes">
+                    <p>Shoes</p>
+                    <button>Shop Now</button>
+                </div>
+                <div class="col-4 product">
+                    <img src="pi3.jpg" alt="Frames">
+                    <p>Frames</p>
+                    <button>Shop Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Products Section -->
+    <div class="s3">
+        <div class="container">
+            <div class="write2">
+                <h1>Featured Products</h1>
+                <p>Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+            </div>
+            <div class="row">
+                <div class="col-4 review">
+                    <img src="p1.jpg" alt="Torch">
+                    <div class="review-content">
+                        <div class="star">
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-regular fa-star" style="color: #ddd;"></i>
+                            <i class="fa-regular fa-star" style="color: #ddd;"></i>
+                            <span class="price">$240.00</span>
+                        </div>
+                        <h2>Torch</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.</p>
+                    </div>
+                </div>
+                <div class="col-4 review">
+                    <img src="p2.jpg" alt="Watches">
+                    <div class="review-content">
+                        <h2>Watches</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.</p>
+                    </div>
+                </div>
+                <div class="col-4 review">
+                    <img src="p3.jpg" alt="Camera">
+                    <div class="review-content">
+                        <h2>Camera</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 footer1">
+                    <h1>SQUARE X</h1>
+                    <p>123 Consectetur at ligula 10660</p>
+                    <p>📞 010-020-0340</p>
+                    <p>📧 info@company.com</p>
+                </div>
+                <div class="col-4 footer1">
+                    <h1>Products</h1>
+                    <p>Luxury</p>
+                    <p>Sport Wear</p>
+                    <p>Women's Shoes</p>
+                    <p>Men's Shoes</p>
+                    <p>Popular Dress</p>
+                    <p>Gym Accessories</p>
+                    <p>Sport Shoes</p>
+                </div>
+                <div class="col-4 footer1">
+                    <h1>Further Info</h1>
+                    <p>Home</p>
+                    <p>About Us</p>
+                    <p>Shop Locations</p>
+                    <p>FAQs</p>
+                    <p>Contact</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer2">
+        <div class="container">
+            <div class="footer2-content">
+                <div class="icon3">
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <i class="fa-brands fa-square-x-twitter"></i>
+                    <i class="fa-brands fa-square-instagram"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+                <div class="email-container">
+                    <input type="email" placeholder="Your email address" class="email-input">
+                    <button class="send-btn">SEND</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer3">
+        <div class="container">
+            <p>Copyright © 2021 Company Name | Designed by TemplateMo</p>
+        </div>
+    </div>
+</body>
+
+</html>
