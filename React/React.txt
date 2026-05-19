@@ -1,0 +1,12 @@
+React is a free,open source javacsript library created by Meta(Formerly Facebook) specifically for building user interfaces (UI).It is widely used to create dynamic, single-page applications(SPAs).that update content instantly without reloading the entire page.
+
+Declarative : Instead of writing step by step instructions to chnage the DOM (imperative),you describe what the UI shoud look in different states, and React automatically handles the updates...
+
+Component Based : React breaks the UI into independent , reusable pieces called components(e.g.,a button,navbar etc.)
+
+Virtual Dom : To maximize performance , React creates a "Virtual" copy of the web page in memory. it compares this to the actual page and only updates the specific parts that changed , rather than re-rendering the whole page.
+
+Usage & Implementation
+
+Web Development : developers use react for front-end web applications, often using ()
+
