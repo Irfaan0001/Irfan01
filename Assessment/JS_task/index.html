@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript Essentials & Advanced — Assessment</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ── HEADER ─────────────────────────────────────────── -->
+<header>
+  <div class="logo"><span>JS</span> Assessment</div>
+  <div class="header-right">
+    <button id="themeToggle">☀ Light</button>
+  </div>
+</header>
+
+<!-- ── TABS ──────────────────────────────────────────────── -->
+<div class="tabs">
+  <button class="tab-btn active" data-tab="secA">Section A — Concepts</button>
+  <button class="tab-btn" data-tab="secB">Section B — Link Manager</button>
+  <button class="tab-btn" data-tab="secC">Section C — Bio-Stack</button>
+</div>
+
+<!-- ── MAIN ──────────────────────────────────────────────── -->
+<main>
+
+  <!-- ══ SECTION A — Concept Application ══════════════════ -->
+  <section id="secA" class="section active">
+    <p class="sec-title">Section A — Concept Application</p>
+    <p class="sec-sub">Click each question to reveal the explanation.</p>
+
+    <div class="concept-card" onclick="toggle(this)">
+      <div class="concept-header">
+        <div class="concept-num">1</div>
+        <div class="concept-q">
+          How do JavaScript execution, variable scoping (let/const), and DOM
+          selection work together to populate the UI?
+        </div>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="concept-body">
+        JavaScript runs top-to-bottom after the HTML is parsed. Variables declared
+        with <code>let</code> are block-scoped and mutable, while <code>const</code>
+        is block-scoped and read-only — both prevent accidental re-declarations
+        unlike <code>var</code>.<br><br>
+        DOM selection (<code>document.querySelector</code>, <code>getElementById</code>)
+        grabs references to HTML elements at runtime. We wait for
+        <code>DOMContentLoaded</code> before querying so the elements actually exist.
+        Once we have a reference, we set <code>textContent</code>,
+        <code>innerHTML</code>, or attributes to inject dynamic profile data without
+        reloading the page.
+      </div>
+    </div>
+
+    <div class="concept-card" onclick="toggle(this)">
+      <div class="concept-header">
+        <div class="concept-num">2</div>
+        <div class="concept-q">
+          How do conditional logic, truthy/falsy values, and DOM manipulation
+          enable the "Verified Creator" badge?
+        </div>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="concept-body">
+        In JavaScript every value is either truthy or falsy. A number like
+        <code>0</code> is falsy; any positive number is truthy.<br><br>
+        We write: <code>if (followers &gt;= threshold)</code> — if truthy, we set
+        <code>badge.style.display = 'inline-block'</code>, otherwise
+        <code>'none'</code>. Whenever the follower count input changes we call this
+        check function again, so the badge updates reactively without a page reload.
+        That is DOM manipulation in response to state change.
+      </div>
+    </div>
+
+    <div class="concept-card" onclick="toggle(this)">
+      <div class="concept-header">
+        <div class="concept-num">3</div>
+        <div class="concept-q">
+          How do arrays, loops, and template literals render and maintain the
+          dynamic social links list?
+        </div>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="concept-body">
+        Each link is stored as an object <code>{title, url}</code> inside an array.
+        When the array changes (add/remove), we loop over it with
+        <code>array.map()</code> and build HTML using template literals:<br><br>
+        <code>`&lt;a href="${"$"}{link.url}"&gt;${"{link.title}"}&lt;/a&gt;`</code><br><br>
+        The joined string is inserted via <code>innerHTML</code>, replacing the
+        entire list in one shot. This ensures the UI always mirrors the array state
+        exactly — no manual DOM patching needed.
+      </div>
+    </div>
+
+    <div class="concept-card" onclick="toggle(this)">
+      <div class="concept-header">
+        <div class="concept-num">4</div>
+        <div class="concept-q">
+          How do LocalStorage and JSON conversion persist and restore application
+          state across page reloads?
+        </div>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="concept-body">
+        <code>localStorage</code> only stores strings. We use
+        <code>JSON.stringify(array)</code> before saving and
+        <code>JSON.parse()</code> after reading. On page load we check:
+        <code>JSON.parse(localStorage.getItem('links') || '[]')</code>.<br><br>
+        If we forget to save after a change, the stored version drifts from the
+        in-memory array and the next reload shows stale data. Forgetting
+        <code>JSON.parse</code> gives us a raw string instead of an array, breaking
+        all array methods.
+      </div>
+    </div>
+
+    <div class="concept-card" onclick="toggle(this)">
+      <div class="concept-header">
+        <div class="concept-num">5</div>
+        <div class="concept-q">
+          How do event handling and event delegation support instant delete without
+          a page refresh?
+        </div>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="concept-body">
+        Instead of attaching a listener to every "Remove" button (which breaks when
+        the list re-renders), we attach one listener to the parent container. This
+        is <strong>event delegation</strong>:<br><br>
+        <code>container.addEventListener('click', e =&gt; { if
+        (e.target.matches('.btn-remove')) { ... } })</code><br><br>
+        The click event bubbles up from the button to the container. We read the
+        index from a <code>data-index</code> attribute, splice the array, save to
+        localStorage, and re-render — all synchronously, no reload.
+      </div>
+    </div>
+
+    <div class="concept-card" onclick="toggle(this)">
+      <div class="concept-header">
+        <div class="concept-num">6</div>
+        <div class="concept-q">
+          How does modular JavaScript (imports/exports) improve maintainability
+          and scalability?
+        </div>
+        <span class="chevron">▾</span>
+      </div>
+      <div class="concept-body">
+        As logic grows, one file becomes a tangled mess. ES Modules let us split
+        concerns: <code>storage.js</code> handles LocalStorage,
+        <code>render.js</code> builds HTML, <code>validate.js</code> checks URLs.<br><br>
+        Each module <code>export</code>s only what other modules need and keeps the
+        rest private. The main file <code>import</code>s them. Benefits: easier
+        unit-testing, no global variable collisions, parallel team work on separate
+        files, and tree-shaking in bundlers drops unused code from production builds.
+      </div>
+    </div>
+
+    <div class="section-nav">
+      <button class="btn-outline" onclick="switchTab('secB')">
+        Next: Link Manager →
+      </button>
+    </div>
+  </section>
+
+
+  <!-- ══ SECTION B — Mini Task: Link Manager ═══════════════ -->
+  <section id="secB" class="section">
+    <p class="sec-title">Section B — Creator Profile Link Manager</p>
+    <p class="sec-sub">Add social links. Links persist on page refresh via localStorage.</p>
+
+    <div class="form-box">
+      <div class="form-row">
+        <div class="field">
+          <label>Link Title</label>
+          <input id="bTitle" type="text" placeholder="e.g. My Portfolio" />
+          <div class="err-msg" id="bTitleErr">Title is required.</div>
+        </div>
+        <div class="field">
+          <label>URL</label>
+          <input id="bUrl" type="text" placeholder="https://example.com" />
+          <div class="err-msg" id="bUrlErr">Must start with https://</div>
+        </div>
+      </div>
+      <button class="btn-primary" onclick="addLink()">+ Add Link</button>
+    </div>
+
+    <p class="preview-label">Profile Preview</p>
+    <div id="linkList"></div>
+
+    <div class="section-nav">
+      <button class="btn-outline" onclick="switchTab('secA')">← Concepts</button>
+      <button class="btn-outline" onclick="switchTab('secC')">Next: Bio-Stack →</button>
+    </div>
+  </section>
+
+
+  <!-- ══ SECTION C — Capstone: Bio-Stack Builder ═══════════ -->
+  <section id="secC" class="section">
+    <p class="sec-title">Section C — Creator "Bio-Stack" Builder</p>
+    <p class="sec-sub">
+      Full capstone: profile, verified badge, link management, theme engine, persistence.
+    </p>
+
+    <div class="capstone-grid">
+
+      <!-- Left Panel: Dashboard Controls -->
+      <div>
+        <div class="profile-panel" style="margin-bottom:16px">
+          <p class="panel-title">Profile Settings</p>
+
+          <div class="field" style="margin-bottom:10px">
+            <label>Display Name</label>
+            <input id="cName" type="text" value="Alex Creator" oninput="updateProfile()" />
+          </div>
+
+          <div class="field" style="margin-bottom:10px">
+            <label>Bio</label>
+            <input id="cBio" type="text" value="Designer · Coder · Creator 🚀" oninput="updateProfile()" />
+          </div>
+
+          <div class="field" style="margin-bottom:10px">
+            <label>Followers</label>
+            <input id="cFollowers" type="number" value="800" min="0" oninput="updateFollowers()" />
+          </div>
+
+          <div class="theme-row">
+            <span>🌙 Dark / ☀ Light Mode</span>
+            <label class="toggle-switch">
+              <input type="checkbox" id="cTheme" onchange="toggleCapstoneTheme()" />
+              <div class="toggle-track"></div>
+              <div class="toggle-knob"></div>
+            </label>
+          </div>
+        </div>
+
+        <div class="profile-panel">
+          <p class="panel-title">Add Social Link</p>
+
+          <div class="field" style="margin-bottom:10px">
+            <label>Title</label>
+            <input id="cTitle" type="text" placeholder="Instagram" />
+            <div class="err-msg" id="cTitleErr">Title is required.</div>
+          </div>
+
+          <div class="field" style="margin-bottom:14px">
+            <label>URL</label>
+            <input id="cUrl" type="text" placeholder="https://instagram.com/..." />
+            <div class="err-msg" id="cUrlErr">Must start with https://</div>
+          </div>
+
+          <button class="btn-primary" style="width:100%" onclick="cAddLink()">
+            + Add Link
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Panel: Live Profile Preview -->
+      <div class="profile-panel" style="text-align:center">
+        <p class="panel-title">Live Profile Preview</p>
+
+        <div class="avatar-wrap">
+          <div class="avatar" id="avatarInitial">A</div>
+          <div id="profileName">Alex Creator</div>
+          <div id="profileBio">Designer · Coder · Creator 🚀</div>
+          <div id="verifiedBadge">✓ Verified Creator</div>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-box">
+            <div class="stat-num" id="statLinks">0</div>
+            <div class="stat-lbl">Links</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num" id="statFollowers">800</div>
+            <div class="stat-lbl">Followers</div>
+          </div>
+        </div>
+
+        <div id="cLinkList"></div>
+      </div>
+
+    </div><!-- end .capstone-grid -->
+
+    <div class="section-nav">
+      <button class="btn-outline" onclick="switchTab('secB')">← Link Manager</button>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── SCRIPT (loaded after HTML so DOM is ready) ─────── -->
+<script src="script.js"></script>
+
+</body>
+</html>
